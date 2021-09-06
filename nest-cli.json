@@ -1,0 +1,43 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/shopper/src",
+  "monorepo": true,
+  "root": "apps/shopper",
+  "compilerOptions": {
+    "webpack": true,
+    "assets": [
+      "**/*.proto"
+    ],
+    "watchAssets": true,
+    "tsConfigPath": "tsconfig.json"
+  },
+  "projects": {
+    "payment": {
+      "type": "application",
+      "root": "apps/payment",
+      "entryFile": "main",
+      "sourceRoot": "apps/payment/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/payment/tsconfig.app.json"
+      }
+    },
+    "shopper": {
+      "type": "application",
+      "root": "apps/shopper",
+      "entryFile": "main",
+      "sourceRoot": "apps/shopper/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/shopper/tsconfig.app.json"
+      }
+    },
+    "order": {
+      "type": "application",
+      "root": "apps/order",
+      "entryFile": "main",
+      "sourceRoot": "apps/order/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/order/tsconfig.app.json"
+      }
+    }
+  }
+}

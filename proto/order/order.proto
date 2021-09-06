@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package order;
+
+service OrderService {
+  rpc GetOrderDetails (GetOrderDetailsRequest) returns (GetOrderDetailsResponse) {}
+}
+
+message GetOrderDetailsRequest {
+  string id = 1;
+}
+
+message GetOrderDetailsResponse {
+  string id = 1;
+  repeated OrderItem items = 2;
+}
+
+message OrderItem {
+  string id = 1;
+}

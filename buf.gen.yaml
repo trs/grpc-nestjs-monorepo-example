@@ -1,0 +1,17 @@
+version: v1
+plugins:
+  - name: ts
+    out: gen/proto/ts
+    path: ./node_modules/.bin/protoc-gen-ts_proto
+    opt:
+      - forceLong=string
+      - esModuleInterop=true
+      - env=node
+      - useOptionals=true
+      - lowerCaseServiceMethods=true
+      - snakeToCamel=true
+      - returnObservable=true
+      - outputServices=grpc-js
+      - nestJs=true
+      - addGrpcMetadata=true
+      - addNestjsRestParameter=true
